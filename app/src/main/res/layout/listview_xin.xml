@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="4dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:src="@mipmap/defaulthead"
+            android:layout_width="50dp"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+               >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="张三（中国）"
+                    android:textColor="#000000"
+                    android:gravity="center_vertical"
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/femail"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/holo_green_light"
+                    android:text="实名认证"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="0分钟前"
+                android:gravity="center_vertical"
+                android:textColor="@android:color/darker_gray"
+                 />
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:text="一个人太久，脱单交友"
+        android:textColor="#000000"/>
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="4"
+        android:text="哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:orientation="horizontal">
+        <ImageView
+           android:src="@drawable/tara1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:src="@drawable/tara2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:src="@drawable/tara3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:orientation="horizontal"
+        android:gravity="right">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/focus"/>
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:text="10w"
+            android:gravity="center_vertical"/>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/comment"/>
+        <TextView
+
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:text="99+"
+            android:gravity="center_vertical"/>
+    </LinearLayout>
+
+</LinearLayout>
