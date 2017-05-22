@@ -11,6 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.example.administrator.application.MyAppliciation;
+import com.squareup.picasso.Picasso;
+
 
 /**
  * Created by Administrator on 2017/5/20.
@@ -37,25 +40,25 @@ public class XinVeiwPagerFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_xin, container, false);
         ImageView iv_xin = (ImageView) view.findViewById(R.id.iv_xin);
-        Bitmap bitmap = null;
+
+
         switch (postion) {
             case 0:
-                bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.pxm);
+                Picasso.with(MyAppliciation.getcontext()).load(R.drawable.pxm).into(iv_xin);
                 break;
             case 1:
-                bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.pusuyan);
+                Picasso.with(MyAppliciation.getcontext()).load(R.drawable.pusuyan).into(iv_xin);
                 break;
             case 2:
-                bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.qbl);
+                Picasso.with(MyAppliciation.getcontext()).load(R.drawable.qbl).into(iv_xin);
                 break;
             case 3:
-                bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ljl);
+                Picasso.with(MyAppliciation.getcontext()).load(R.drawable.ljl).into(iv_xin);
                 break;
             default:
-                bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.pxm);
+                Picasso.with(MyAppliciation.getcontext()).load(R.drawable.pxm).into(iv_xin);
                 break;
         }
-        iv_xin.setImageBitmap(bitmap);
         return view;
     }
     public void setPostion(int postion){
