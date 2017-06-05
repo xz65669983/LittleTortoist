@@ -1,4 +1,5 @@
 package com.example.administrator.littletortoisetortoise;
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.ViewPager;
@@ -62,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
                     public void run() {
                         Toast.makeText(MainActivity.this, "哈哈 刷新完成啦", Toast.LENGTH_SHORT).show();
                         mPullRefreshListView.onRefreshComplete();
+
                     }
                 }, 2000);
 
@@ -78,6 +80,13 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(tb);
         getSupportActionBar().setHomeButtonEnabled(true); //设置返回键可用
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        tb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,ActivityActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
