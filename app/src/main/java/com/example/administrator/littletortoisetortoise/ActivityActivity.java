@@ -6,6 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
+import android.widget.ListView;
+
+import com.example.administrator.adapter.ActivityCenterAdapter;
 
 /**
  * Created by Administrator on 2017/6/3.
@@ -14,13 +17,20 @@ import android.view.View;
 public class ActivityActivity extends AppCompatActivity {
 
     private Toolbar tb;
+    private ListView lv_activity_center;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_actiivity);
         findId();
         initialtoolbar();
+        initiallistview();
 
+    }
+
+    private void initiallistview() {
+        lv_activity_center.setAdapter(new ActivityCenterAdapter());
     }
 
     private void initialtoolbar() {
@@ -32,6 +42,7 @@ public class ActivityActivity extends AppCompatActivity {
 
     private void findId() {
         tb = (Toolbar) findViewById(R.id.tb);
+        lv_activity_center = (ListView) findViewById(R.id.lv_activity_center);
     }
 
     @Override
