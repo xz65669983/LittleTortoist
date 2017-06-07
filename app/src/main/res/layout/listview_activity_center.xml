@@ -23,7 +23,8 @@
         android:layout_height="150dp"
         android:paddingLeft="2dp"
         android:paddingRight="2dp"
-        android:src="@drawable/taraset"/>
+        android:src="@drawable/taraset"
+        android:scaleType="fitXY"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
