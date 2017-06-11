@@ -3,9 +3,7 @@ package com.example.administrator.adapter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-
 import com.example.administrator.littletortoisetortoise.XinVeiwPagerFragment;
-
 import java.util.ArrayList;
 
 /**
