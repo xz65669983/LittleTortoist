@@ -1,7 +1,9 @@
 package com.example.administrator.littletortoisetortoise;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
@@ -42,6 +44,14 @@ public class ActivityActivity extends AppCompatActivity {
         setSupportActionBar(tb);
         getSupportActionBar().setHomeButtonEnabled(true); //设置返回键可用
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        tb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(ActivityActivity.this,HomepageActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void findId() {

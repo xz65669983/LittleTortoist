@@ -109,10 +109,13 @@
             android:layout_height="match_parent"
             android:text="10w"
             android:gravity="center_vertical"/>
+
         <ImageView
+            android:id="@+id/imageView"
             android:layout_width="20dp"
             android:layout_height="match_parent"
-            android:src="@drawable/comment"/>
+            android:src="@drawable/comment" />
+
         <TextView
 
             android:layout_width="50dp"

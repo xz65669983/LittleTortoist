@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="D:\Studioworkspace\LittleTortoist\pulltorefreshlibrary\src\main\shaders"/></dataSet><dataSet config="debug"><source path="D:\Studioworkspace\LittleTortoist\pulltorefreshlibrary\src\debug\shaders"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="C:\software\Android\AndoridstudioWorkspace\LittleTortoist\pulltorefreshlibrary\src\main\shaders"/></dataSet><dataSet config="debug"><source path="C:\software\Android\AndoridstudioWorkspace\LittleTortoist\pulltorefreshlibrary\src\debug\shaders"/></dataSet></merger>

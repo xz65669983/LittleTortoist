@@ -1,10 +1,18 @@
 [
     {
+        "merged": "C:\\software\\Android\\AndoridstudioWorkspace\\LittleTortoist\\pulltorefreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_top.xml",
+        "source": "C:\\software\\Android\\AndoridstudioWorkspace\\LittleTortoist\\pulltorefreshlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_top.xml"
+    },
+    {
         "merged": "D:\\Studioworkspace\\LittleTortoist\\pulltorefreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_bottom.xml",
         "source": "D:\\Studioworkspace\\LittleTortoist\\pulltorefreshlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_bottom.xml"
     },
     {
         "merged": "D:\\Studioworkspace\\LittleTortoist\\pulltorefreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_top.xml",
         "source": "D:\\Studioworkspace\\LittleTortoist\\pulltorefreshlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_top.xml"
+    },
+    {
+        "merged": "C:\\software\\Android\\AndoridstudioWorkspace\\LittleTortoist\\pulltorefreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_bottom.xml",
+        "source": "C:\\software\\Android\\AndoridstudioWorkspace\\LittleTortoist\\pulltorefreshlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_bottom.xml"
     }
 ]
