@@ -21,6 +21,8 @@
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
         <activity android:name=".HomepageActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+        <activity android:name=".IssueActivityActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
     </application>
 
 </manifest>
