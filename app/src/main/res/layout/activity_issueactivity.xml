@@ -10,6 +10,8 @@
         android:minHeight="?attr/actionBarSize">
     </android.support.v7.widget.Toolbar>
     <ScrollView
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
@@ -20,15 +22,24 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/edittext_background"
+                android:paddingLeft="5dp"
+                android:textSize="20sp"
                 android:hint="主题"/>
 
             <EditText
+
                 android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="时间" />
+                android:background="@drawable/edittext_background"
+                android:paddingLeft="5dp"
+                android:textSize="20sp"
+                android:hint="时间"
+                android:layout_marginTop="10dp"/>
 
             <LinearLayout
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:orientation="horizontal">
@@ -47,10 +58,14 @@
                     android:src="@drawable/defaultmap"/>
             </LinearLayout>
             <EditText
+
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
+                android:background="@drawable/edittext_background"
+                android:paddingLeft="5dp"
                 android:hint="人数"/>
             <EditText
+
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:hint="活动内容"

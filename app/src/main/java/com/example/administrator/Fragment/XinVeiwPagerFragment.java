@@ -1,15 +1,15 @@
-package com.example.administrator.littletortoisetortoise;
+package com.example.administrator.Fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.administrator.application.MyAppliciation;
+import com.example.administrator.littletortoisetortoise.R;
 import com.squareup.picasso.Picasso;
 
 

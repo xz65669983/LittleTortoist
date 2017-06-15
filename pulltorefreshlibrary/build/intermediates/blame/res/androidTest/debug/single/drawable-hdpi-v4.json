@@ -4,8 +4,20 @@
         "source": "C:\\software\\Android\\AndoridstudioWorkspace\\LittleTortoist\\pulltorefreshlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\default_ptr_flip.png"
     },
     {
+        "merged": "E:\\AndroidStudioSpace\\LittleTortoist\\pulltorefreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\default_ptr_flip.png",
+        "source": "E:\\AndroidStudioSpace\\LittleTortoist\\pulltorefreshlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\default_ptr_flip.png"
+    },
+    {
+        "merged": "E:\\AndroidStudioSpace\\LittleTortoist\\pulltorefreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\indicator_arrow.png",
+        "source": "E:\\AndroidStudioSpace\\LittleTortoist\\pulltorefreshlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\indicator_arrow.png"
+    },
+    {
         "merged": "C:\\software\\Android\\AndoridstudioWorkspace\\LittleTortoist\\pulltorefreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\default_ptr_rotate.png",
         "source": "C:\\software\\Android\\AndoridstudioWorkspace\\LittleTortoist\\pulltorefreshlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\default_ptr_rotate.png"
+    },
+    {
+        "merged": "E:\\AndroidStudioSpace\\LittleTortoist\\pulltorefreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\default_ptr_rotate.png",
+        "source": "E:\\AndroidStudioSpace\\LittleTortoist\\pulltorefreshlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\default_ptr_rotate.png"
     },
     {
         "merged": "C:\\software\\Android\\AndoridstudioWorkspace\\LittleTortoist\\pulltorefreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\indicator_arrow.png",

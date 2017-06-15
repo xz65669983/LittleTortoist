@@ -1,30 +1,29 @@
 package com.example.administrator.littletortoisetortoise;
+
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.View;
+
 /**
- * Created by zzc on 2017/6/11.
+ * Created by zhangzhengchao on 2017/6/15.
  */
 
-public class IssueActivityActivity extends AppCompatActivity {
+public class EventDetailsActivity extends AppCompatActivity {
 
     private Toolbar tb;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_issueactivity);
-        findview();
+    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
+        super.onCreate(savedInstanceState, persistentState);
+        setContentView(R.layout.activity_eventdetail);
+        findId();
         initialtoolbar();
-    }
 
-    private void findview() {
-        tb = (Toolbar) findViewById(R.id.tb);
     }
-
     private void initialtoolbar() {
         tb.setTitle("");
         setSupportActionBar(tb);
@@ -34,9 +33,19 @@ public class IssueActivityActivity extends AppCompatActivity {
         tb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                  Intent intent=new Intent(IssueActivityActivity.this,EventDetailsActivity.class);
-                startActivity(intent);
+
             }
         });
+    }
+    private void findId() {
+        tb = (Toolbar) findViewById(R.id.tb);
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
     }
 }
