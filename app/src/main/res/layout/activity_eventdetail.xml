@@ -16,86 +16,98 @@
             android:textColor="@android:color/holo_green_light"
             android:textSize="20sp" />
     </android.support.v7.widget.Toolbar>
-    <LinearLayout
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-     <LinearLayout
-         android:layout_width="match_parent"
-         android:layout_height="30dp"
-         android:orientation="horizontal">
-         <ImageView
-             android:padding="2dp"
-             android:layout_width="30dp"
-             android:layout_height="match_parent"
-             android:src="@mipmap/defaulthead"/>
-         <TextView
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:text="XXX发布于2017年5月20日 20:36：02， 已有N人参与"
-             android:gravity="center_vertical"
-             android:maxLines="1"
-             android:textColor="#505050"
-             android:textSize="15sp"/>
-         </LinearLayout>
+        android:layout_height="match_parent">
 
-         <EditText
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-             android:id="@+id/editText"
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:background="@drawable/edittext_background"
-             android:paddingLeft="5dp"
-             android:textSize="20sp"
-             android:hint="时间"
-             android:layout_marginTop="10dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="horizontal">
 
-         <LinearLayout
-             android:layout_marginTop="10dp"
-             android:layout_width="match_parent"
-             android:layout_height="150dp"
-             android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:padding="2dp"
+                    android:src="@mipmap/defaulthead" />
 
-             <TextView
-                 android:id="@+id/textView"
-                 android:layout_width="0dp"
-                 android:layout_height="match_parent"
-                 android:layout_weight="1"
-                 android:text="地点" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="XXX发布于2017年5月20日20:36:02,已有N人参与"
+                    android:textColor="#505050"
+                    android:textSize="15sp" />
+            </LinearLayout>
 
-             <ImageView
-                 android:layout_width="0dp"
-                 android:layout_weight="1"
-                 android:layout_height="match_parent"
-                 android:src="@drawable/defaultmap"/>
-         </LinearLayout>
-         <EditText
+            <EditText
 
-             android:layout_width="150dp"
-             android:layout_height="wrap_content"
-             android:background="@drawable/edittext_background"
-             android:paddingLeft="5dp"
-             android:hint="人数"/>
-         <EditText
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittext_background"
+                android:hint="时间"
+                android:paddingLeft="5dp"
+                android:textSize="20sp" />
 
-             android:layout_width="match_parent"
-             android:layout_height="150dp"
-             android:hint="活动内容"
-             android:gravity="top"/>
-         <EditText
-             android:layout_width="match_parent"
-             android:layout_height="120dp"
-             android:hint="要求"
-             android:gravity="top"/>
-         <EditText
-             android:layout_width="match_parent"
-             android:layout_height="120dp"
-             android:hint="回复"
-             android:gravity="top"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
-     </LinearLayout>
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="地点" />
 
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/defaultmap" />
+            </LinearLayout>
 
+            <EditText
+
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_background"
+                android:hint="人数"
+                android:paddingLeft="5dp" />
+
+            <EditText
+
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:gravity="top"
+                android:hint="活动内容" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:gravity="top"
+                android:hint="要求" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:gravity="top"
+                android:hint="回复" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
 
 </LinearLayout>
