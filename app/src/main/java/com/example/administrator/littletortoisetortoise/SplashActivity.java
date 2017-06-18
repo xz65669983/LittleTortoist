@@ -53,6 +53,7 @@ public class SplashActivity extends AppCompatActivity {
         alpha.setDuration(2000);// 动画时间
         alpha.setFillAfter(true);// 保持动画状态
 
+
         set.addAnimation(rotate);
         set.addAnimation(scale);
         set.addAnimation(alpha);
