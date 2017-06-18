@@ -53,6 +53,7 @@
             android:layout_below="@id/tv_people_interesting"
             android:layout_toRightOf="@id/tv_activity_status"/>
         <Button
+            android:id="@+id/bt_activitydetials"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="活动详情"

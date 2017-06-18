@@ -25,7 +25,11 @@
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
         <activity android:name=".EventDetailsActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
-        <activity android:name=".MainActivity"
+        <activity android:name=".MakeFriendsActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+        <activity android:name=".LoginActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+        <activity android:name=".MoreActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
     </application>
 

@@ -86,7 +86,7 @@ public class SplashActivity extends AppCompatActivity {
      */
     private void jumpNextPage() {
 
-            startActivity(new Intent(SplashActivity.this, MainActivity.class));
+            startActivity(new Intent(SplashActivity.this, HomepageActivity.class));
 
 
         finish();

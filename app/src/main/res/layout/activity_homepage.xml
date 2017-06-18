@@ -1,79 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:zhy="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <com.handmark.pulltorefresh.library.PullToRefreshListView
-        android:id="@+id/home_pull_refresh_list"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <android.support.v7.widget.Toolbar
+
+        android:id="@+id/tb"
         android:layout_width="match_parent"
-        android:divider="#19000000"
-        android:dividerHeight="4dp"
-        android:fadingEdge="none"
-        android:fastScrollEnabled="false"
-        android:footerDividersEnabled="false"
-        android:headerDividersEnabled="false"/>
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="首页"
+            android:textColor="@android:color/holo_green_light"
+            android:textSize="20sp" />
+        <Button
+            android:id="@+id/bt_login"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:text="登录"
+            android:visibility="invisible"
+            style="@style/Widget.AppCompat.Light.ActionButton"/>
+
+    </android.support.v7.widget.Toolbar>
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_mainhomePager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"></android.support.v4.view.ViewPager>
+
     <LinearLayout
 
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
+        android:layout_height="60dp"
         android:layout_marginEnd="0dp"
-        android:layout_marginRight="0dp">
+        android:layout_marginRight="0dp"
+        android:orientation="horizontal">
 
-        <com.example.administrator.CustomComponent.ChangeColorIconWithTextView
-
-            android:id="@+id/changeColorIconWithTextView"
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="fill_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:padding="5dp"
-            zhy:icon="@drawable/ic_menu_friendslist"
-            zhy:text="首页"
-            zhy:text_size="12sp" />
-        />
-        <com.example.administrator.CustomComponent.ChangeColorIconWithTextView
+            android:orientation="vertical">
 
-            android:layout_width="0dp"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:padding="5dp"
-            zhy:icon="@drawable/ic_menu_friendslist"
-            zhy:text="我发布的"
-            zhy:text_size="12sp" />
-        />
-        <com.example.administrator.CustomComponent.ChangeColorIconWithTextView
+            <ImageView
+                android:id="@+id/iv_homepage"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:src="@drawable/ic_menu_friendslist" />
 
-            android:layout_width="0dp"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:padding="5dp"
-            zhy:icon="@drawable/ic_menu_friendslist"
-            zhy:text="我参加的"
-            zhy:text_size="12sp" />
-        />
-        <com.example.administrator.CustomComponent.ChangeColorIconWithTextView
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:gravity="center_horizontal"
+                android:text="首页" />
 
-            android:layout_width="0dp"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:padding="5dp"
-            zhy:icon="@drawable/ic_menu_friendslist"
-            zhy:text="发布活动"
-            zhy:text_size="12sp" />
-        />
-        <com.example.administrator.CustomComponent.ChangeColorIconWithTextView
+        </LinearLayout>
 
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="fill_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:padding="5dp"
-            zhy:icon="@drawable/ic_menu_friendslist"
-            zhy:text="发布活动"
-            zhy:text_size="12sp" />
-        />
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_makefriend"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:src="@drawable/ic_menu_friendslist" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:gravity="center_horizontal"
+                android:text="交友主页" />
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/iv_medium"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/plus" />
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_activity"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:src="@drawable/ic_menu_friendslist" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:gravity="center_horizontal"
+                android:text="活动" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_personalcenter"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:src="@drawable/ic_menu_friendslist" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:gravity="center_horizontal"
+                android:text="个人中心" />
+
+        </LinearLayout>
+
 
     </LinearLayout>
 

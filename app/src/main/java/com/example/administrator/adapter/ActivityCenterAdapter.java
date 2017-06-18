@@ -1,12 +1,15 @@
 package com.example.administrator.adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.example.administrator.application.MyAppliciation;
+import com.example.administrator.littletortoisetortoise.EventDetailsActivity;
 import com.example.administrator.littletortoisetortoise.R;
 
 import java.util.LinkedList;
@@ -40,10 +43,17 @@ public class ActivityCenterAdapter extends BaseAdapter {
         if (convertView == null) {
             view = LayoutInflater.from(MyAppliciation.getcontext()).inflate(R.layout.listview_activity_center, parent, false);
 
-
         } else {
             view = convertView;
         }
+        Button bt_activitydetials= (Button) view.findViewById(R.id.bt_activitydetials);
+        bt_activitydetials.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MyAppliciation.getcontext(), EventDetailsActivity.class);
+                MyAppliciation.getcontext().startActivity(intent);
+            }
+        });
         return view;
     }
 

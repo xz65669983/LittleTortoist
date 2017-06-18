@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.example.administrator.Fragment.HomePagerFragment;
+import com.example.administrator.Fragment.HomePagerHeadFragment;
 
 import java.util.ArrayList;
 
@@ -16,10 +16,10 @@ public class FrangmentHomepagerHeadAdapter extends FragmentPagerAdapter {
     ArrayList<Fragment> arrayList=new ArrayList<>();
     public FrangmentHomepagerHeadAdapter(FragmentManager fm) {
         super(fm);
-        arrayList.add(HomePagerFragment.getHomePagerFragmentInstance(0));
-        arrayList.add(HomePagerFragment.getHomePagerFragmentInstance(1));
-        arrayList.add(HomePagerFragment.getHomePagerFragmentInstance(2));
-        arrayList.add(HomePagerFragment.getHomePagerFragmentInstance(3));
+        arrayList.add(HomePagerHeadFragment.getHomePagerFragmentInstance(0));
+        arrayList.add(HomePagerHeadFragment.getHomePagerFragmentInstance(1));
+        arrayList.add(HomePagerHeadFragment.getHomePagerFragmentInstance(2));
+        arrayList.add(HomePagerHeadFragment.getHomePagerFragmentInstance(3));
 
     }
 
