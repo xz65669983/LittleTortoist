@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">优雅社区</string>
     <string name="lv_homepage_textcontent">Morbi pretium nulla vel risus pretium porttitor. Ut dictum nulla quis mauris gravida, ac lobortis enim lacinia. Suspendisse non lacinia justo. Donec dapibus neque vitae nunc feugiat, id mollis ante feugiat. Aenean gravida, mauris vel porta condimentum, dolor nisl consequat orci, nec gravida neque dui ac purus. Proin sagittis ex lectus, sit amet pulvinar turpis pulvinar nec. Sed vitae augue est. Morbi porttitor et nibh vitae luctus. In ullamcorper dictum mattis. Vivamus porta risus convallis lectus varius rutrum. Maecenas bibendum, augue sed faucibus viverra, nulla mi pellentesque mauris, a finibus enim sem quis quam. Nunc id tempus lacus. Integer sit amet enim et est vestibulum suscipit eget at felis.</string>
+    <string-array name="find_password_waysss">
+        <item>手机找回</item>
+        <item>密码找回</item>
+    </string-array>
 </resources>

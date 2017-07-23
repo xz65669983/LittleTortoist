@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="find_password_way">
+        <item>手机找回</item>
+        <item>密码找回</item>
+    </string-array>
+</resources>
