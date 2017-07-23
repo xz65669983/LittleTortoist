@@ -23,6 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/lv_homepage_textcontent"
+        android:textColor="#9d9d9d"
         android:lines="5"/>
     <ImageView
         android:layout_width="match_parent"
