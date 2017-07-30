@@ -8,4 +8,98 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+    <!--COPY -->
+
+    <style name="textStyle"></style>
+
+    <style name="textStyle.Small">
+        <item name="android:textSize">@dimen/textSizeSmall</item>
+    </style>
+
+    <style name="textStyle.Normal">
+        <item name="android:textSize">@dimen/textSizeNormal</item>
+    </style>
+
+    <style name="textStyle.Medium">
+        <item name="android:textSize">@dimen/textSizeMedium</item>
+    </style>
+
+    <style name="textStyle.Big">
+        <item name="android:textSize">@dimen/textSizeBig</item>
+    </style>
+
+    <style name="textStyle.Big.subTitle" parent="textStyle.Big">
+        <item name="android:textColor">@color/sub_title</item>
+    </style>
+
+    <style name="separator_line">
+        <item name="android:background">#ffe0e0e0</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">1.0px</item>
+    </style>
+    <!-- 小号 , 黑色 -->
+    <style name="textStyle.Small.black" parent="textStyle.Small">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <!-- 普通号 , 黑色 -->
+    <style name="textStyle.Normal.black" parent="textStyle.Normal">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <!-- 中号 , 黑色 -->
+    <style name="textStyle.Medium.black" parent="textStyle.Medium">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <!-- 中号 , 黑色 -->
+    <style name="textStyle.Medium.User" parent="textStyle.Medium.black">
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+
+    <!-- 小号 , 白色 -->
+    <style name="textStyle.Small.white" parent="textStyle.Small">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <!-- 普通号 , 白色 -->
+    <style name="textStyle.Normal.white" parent="textStyle.Normal">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <!-- 中号 , 白色 -->
+    <style name="textStyle.Medium.white" parent="textStyle.Medium">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+
+    <!-- 大号 , 红色 -->
+    <style name="textStyle.Big.lightRed" parent="textStyle.Big">
+        <item name="android:textColor">@color/light_red</item>
+    </style>
+
+    <!-- 大号 , 黑色 -->
+    <style name="textStyle.Big.black" parent="textStyle.Big">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!-- 普通号 , 红色 -->
+    <style name="textStyle.Normal.lightRed" parent="textStyle.Normal">
+        <item name="android:textColor">@color/light_red</item>
+    </style>
+
+    <!-- 小号 , 红色 -->
+    <style name="textStyle.Small.lightRed" parent="textStyle.Small">
+        <item name="android:textColor">@color/light_red</item>
+    </style>
+
+    <!-- 普通号 , 副标题 -->
+    <style name="textStyle.Normal.subTitle" parent="textStyle.Normal">
+        <item name="android:textColor">@color/sub_title</item>
+    </style>
+
 </resources>
