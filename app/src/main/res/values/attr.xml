@@ -13,4 +13,10 @@
         <attr name="text_size" />
     </declare-styleable>
 
+    <declare-styleable name="ArrowView">
+        <attr name="titleText" format="string" />
+        <attr name="arrowSrc" format="reference" />
+        <attr name="indicatorShow" format="boolean" />
+    </declare-styleable>
+
 </resources>

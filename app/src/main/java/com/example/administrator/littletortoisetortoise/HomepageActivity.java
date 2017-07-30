@@ -70,9 +70,9 @@ public class HomepageActivity extends AppCompatActivity {
                         intialToolBar();
                         break;
                     case 3:
-                        tv_title.setText("发现");
+                        tv_title.setText("个人中心");
                         clickDone(position);
-                        intialToolBar4();
+                        intialToolBar();
 
                     default:
                         break;
@@ -163,13 +163,7 @@ private void clickDone(int index){
         setSupportActionBar(tb);
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
     }
-    private void intialToolBar4() {
-        tb.setTitle("");
-        setSupportActionBar(tb);
-        bt_login.setVisibility(View.VISIBLE);
-        getSupportActionBar().setHomeButtonEnabled(true); //设置返回键可用
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    }
+
 
 
 }

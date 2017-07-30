@@ -13,11 +13,11 @@
         android:layout_margin="@dimen/person_head_relayout_padding"
         android:orientation="vertical">
       
-	    <com.soubao.tpshop.view.SPMoreImageView
+	    <com.example.administrator.view.SPMoreImageView
 	        android:id="@+id/head_mimgv"
             android:layout_width="70dip"
             android:layout_height="70dip"
-            android:src="@drawable/person_default_head"
+            android:src="@mipmap/person_default_head"
             android:adjustViewBounds="true"
             android:layout_marginLeft="20dip"
             android:layout_centerVertical="true"/>

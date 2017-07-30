@@ -45,6 +45,11 @@
         <activity
             android:name=".FindPasswordActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity android:name=".UserDetailsActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity android:name=".RevisePasswordActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+
 
     </application>
 

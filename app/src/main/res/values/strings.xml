@@ -191,6 +191,8 @@
     <string name="user_nick">昵称</string>
     <string name="user_sex">性别</string>
     <string name="user_age">出生日期</string>
+    <string name="user_city">所在城市 </string>
+    <string name="revise_password">修改密码</string>
     <string name="user_save">保存</string>
     <string-array name="user_sex_name">
         <item>保密</item>
