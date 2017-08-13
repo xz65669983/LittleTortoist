@@ -24,7 +24,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="15dip"
             android:layout_toRightOf="@+id/btn_back"
-            android:text="找回密码"
+            android:text="注册"
             android:textColor="@color/white"
             android:textSize="20sp" />
 

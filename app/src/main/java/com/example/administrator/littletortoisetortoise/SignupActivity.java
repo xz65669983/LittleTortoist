@@ -1,5 +1,6 @@
 package com.example.administrator.littletortoisetortoise;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +16,11 @@ public class SignupActivity extends AppCompatActivity {
     @OnClick(R.id.btn_back)
     public void back(){
         finish();
+    }
+    @OnClick(R.id.btn_signup)
+    public  void finsihSignup(){
+        Intent intent=new Intent(this,IdentifyIDActivity.class);
+        startActivity(intent);
     }
 
     @Override
