@@ -2,6 +2,8 @@ package com.example.administrator.littletortoisetortoise;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.animation.AlphaAnimation;
@@ -18,13 +20,38 @@ import android.widget.LinearLayout;
 public class SplashActivity extends AppCompatActivity {
 
     private LinearLayout ll_splash;
+    Handler myHandler=new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what){
+                //第一次打开APP
+                case 1:
+                    Intent intent1=new Intent(SplashActivity.this,FirsrtComingActvity.class);
+                    startActivity(intent1);
+                    finish();
+
+                    break;
+                case 2:
+                    Intent intent2=new Intent(SplashActivity.this,HomepageActivity.class);
+                    startActivity(intent2);
+                    finish();
+                    break;
+
+            }
+        }
+    };
+
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
          setContentView(R.layout.activity_splash);
         ll_splash = (LinearLayout) findViewById(R.id.ll_splash);
-        startAnim();
+        //startAnim();
+        myHandler.sendEmptyMessageDelayed(1,1000);
+
+
     }
     /**
      * 开启动画

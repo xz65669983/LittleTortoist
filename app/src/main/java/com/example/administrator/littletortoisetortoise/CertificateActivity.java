@@ -24,110 +24,117 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import java.io.File;
 import java.io.IOException;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-import static android.R.attr.switchMinWidth;
+import static android.R.attr.start;
 import static android.R.attr.type;
 
 /**
- * Created by Administrator on 2017/8/12.
+ * Created by zzc on 2017/8/13.
  */
 
-public class IdentifyIDActivity extends AppCompatActivity {
+
+public class CertificateActivity extends AppCompatActivity {
+
+    @BindView(R.id.iv_certificate_front)
+    ImageView iv_certificate_front;
+    @BindView(R.id.iv_certifiicate_back)
+    ImageView iv_certifiicate_back;
+    @OnClick(R.id.btn_back)
+    public  void back(){
+        finish();
+    }
+    @OnClick(R.id.jump)
+    public  void jump(){
+        jumpnextactivity();
+    }
+    @OnClick(R.id.bt_sure_upload)
+    public  void sureAndUpload(){
+        jumpnextactivity();
+    }
 
 
-    @BindView(R.id.iv_id_back)ImageView iv_id_back;
-    @BindView(R.id.iv_id_front)ImageView iv_id_front;
 
     private Uri imageUri;
+
     public static final int TAKE_PHOTO_FRONT = 1;
     public static final int TAKE_PHOTO_BACK = 2;
 
     public static final int CHOOSE_PHOTO_FRONT = 3;
     public static final int CHOOSE_PHOTO_BACK  = 4;
-    @OnClick(R.id.id_jump)
-    public void jump(){
-        Intent intent=new Intent(this,CertificateActivity.class);
-        startActivity(intent);
-    }
-    @OnClick(R.id.btn_back)
-    public  void back(){
-        finish();
-    }
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_identify_id);
+        setContentView(R.layout.activity_certificate);
         ButterKnife.bind(this);
-         Mylistener mylistener1=new Mylistener(1);
+
+      Mylistener mylistener1=new Mylistener(1);
         Mylistener mylistener2=new Mylistener(2);
-        iv_id_front.setOnClickListener(mylistener1);
-        iv_id_back.setOnClickListener(mylistener2);
+        iv_certificate_front.setOnClickListener(mylistener1);
+        iv_certifiicate_back.setOnClickListener(mylistener2);
+
+
 
     }
 
-
-   class Mylistener implements View.OnClickListener{
-       //1为正面 2为反面
-       int type;
+    class Mylistener implements View.OnClickListener{
+        //1为正面 2为反面
+        int type;
         public Mylistener(int type){
             this.type=type;
         }
-       @Override
-       public void onClick(View v) {
-           AlertDialog.Builder builder=new AlertDialog.Builder(IdentifyIDActivity.this);
-           final String[] Items={"拍照","从手机中选取"};
-           builder.setItems(Items, new DialogInterface.OnClickListener() {
-               @Override
-               public void onClick(DialogInterface dialogInterface, int i) {
-                   switch (i){
-                       //拍照
-                       case 0:
-                           File outputImage = new File(getExternalCacheDir(), "output_image.jpg");
-                           try {
-                               if (outputImage.exists()) {
-                                   outputImage.delete();
-                               }
-                               outputImage.createNewFile();
-                           } catch (IOException e) {
-                               e.printStackTrace();
-                           }
-                           if (Build.VERSION.SDK_INT < 24) {
-                               imageUri = Uri.fromFile(outputImage);
-                           } else {
-                               imageUri = FileProvider.getUriForFile(IdentifyIDActivity.this, "com.example.administrator.littletortoisetortoise.fileprovider", outputImage);
-                           }
-                           // 启动相机程序
-                           Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
-                           intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
-                           startActivityForResult(intent, type==1?TAKE_PHOTO_FRONT:TAKE_PHOTO_BACK);
-                           break;
+        @Override
+        public void onClick(View v) {
+            AlertDialog.Builder builder=new AlertDialog.Builder(CertificateActivity.this);
+            final String[] Items={"拍照","从手机中选取"};
+            builder.setItems(Items, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    switch (i){
+                        //拍照
+                        case 0:
+                            File outputImage = new File(getExternalCacheDir(), "output_image.jpg");
+                            try {
+                                if (outputImage.exists()) {
+                                    outputImage.delete();
+                                }
+                                outputImage.createNewFile();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            if (Build.VERSION.SDK_INT < 24) {
+                                imageUri = Uri.fromFile(outputImage);
+                            } else {
+                                imageUri = FileProvider.getUriForFile(CertificateActivity.this, "com.example.administrator.littletortoisetortoise.fileprovider", outputImage);
+                            }
+                            // 启动相机程序
+                            Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+                            intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
+                            startActivityForResult(intent, type==1?TAKE_PHOTO_FRONT:TAKE_PHOTO_BACK);
+                            break;
 
-                       //从照片中获取
-                       case 1:
-                           if (ContextCompat.checkSelfPermission(IdentifyIDActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-                               ActivityCompat.requestPermissions(IdentifyIDActivity.this, new String[]{ Manifest.permission. WRITE_EXTERNAL_STORAGE }, 1);
-                           } else {
-                               openAlbum(type);
-                           }
-                           break;
+                        //从照片中获取
+                        case 1:
+                            if (ContextCompat.checkSelfPermission(CertificateActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                                ActivityCompat.requestPermissions(CertificateActivity.this, new String[]{ Manifest.permission. WRITE_EXTERNAL_STORAGE }, 1);
+                            } else {
+                                openAlbum(type);
+                            }
+                            break;
 
-                   }
+                    }
 
-               }
-           });
-           builder.setCancelable(true);
-           AlertDialog dialog=builder.create();
-           dialog.show();
-       }
-   }
+                }
+            });
+            builder.setCancelable(true);
+            AlertDialog dialog=builder.create();
+            dialog.show();
+        }
+    }
 
 
 
@@ -158,7 +165,7 @@ public class IdentifyIDActivity extends AppCompatActivity {
                     try {
                         // 将拍摄的照片显示出来
                         Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(imageUri));
-                        iv_id_front.setImageBitmap(bitmap);
+                        iv_certificate_front.setImageBitmap(bitmap);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -169,7 +176,7 @@ public class IdentifyIDActivity extends AppCompatActivity {
                     try {
                         // 将拍摄的照片显示出来
                         Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(imageUri));
-                        iv_id_back.setImageBitmap(bitmap);
+                        iv_certifiicate_back.setImageBitmap(bitmap);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -257,10 +264,11 @@ public class IdentifyIDActivity extends AppCompatActivity {
             Bitmap bitmap = BitmapFactory.decodeFile(imagePath);
             switch (type){
                 case 1:
-                    iv_id_front.setImageBitmap(bitmap);
+                    iv_certificate_front.setImageBitmap(bitmap);
                     break;
                 case 2:
-                    iv_id_back.setImageBitmap(bitmap);
+                    iv_certifiicate_back.setImageBitmap(bitmap);
+
                     break;
             }
 
@@ -270,4 +278,8 @@ public class IdentifyIDActivity extends AppCompatActivity {
         }
     }
 
+    public void jumpnextactivity(){
+       Intent intent=new Intent(this,HomepageActivity.class);
+        startActivity(intent);
+    }
 }
