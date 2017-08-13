@@ -34,6 +34,11 @@ public class LoginActivity extends AppCompatActivity {
     public void backUp(){
         finish();
     }
+    @OnClick(R.id.btn_login)
+    public void login(){
+        Toast.makeText(this,"登录成功",Toast.LENGTH_SHORT).show();
+        finish();
+    }
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

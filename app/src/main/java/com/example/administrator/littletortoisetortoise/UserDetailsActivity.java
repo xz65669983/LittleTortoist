@@ -18,6 +18,10 @@ public class UserDetailsActivity extends AppCompatActivity {
         Intent intent =new Intent(UserDetailsActivity.this,RevisePasswordActivity.class);
         startActivity(intent);
     }
+    @OnClick(R.id.btn_save)
+    public void save(){
+        finish();
+    }
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
