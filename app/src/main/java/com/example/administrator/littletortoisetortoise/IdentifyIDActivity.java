@@ -2,6 +2,7 @@ package com.example.administrator.littletortoisetortoise;
 
 import android.Manifest;
 import android.annotation.TargetApi;
+import android.app.ProgressDialog;
 import android.content.ContentUris;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -9,9 +10,12 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.icu.text.UnicodeSetSpanner;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
@@ -40,6 +44,18 @@ import static android.R.attr.type;
  */
 
 public class IdentifyIDActivity extends AppCompatActivity {
+    Handler handler=new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            switch(msg.what){
+                case 0:
+                    Intent intent=new Intent(IdentifyIDActivity.this,CertificateActivity.class);
+                    startActivity(intent);
+                    Toast.makeText(IdentifyIDActivity.this, "上传成功", Toast.LENGTH_SHORT).show();
+                    break;
+            }
+        }
+    };
 
 
     @BindView(R.id.iv_id_back)ImageView iv_id_back;
@@ -53,6 +69,7 @@ public class IdentifyIDActivity extends AppCompatActivity {
     public static final int CHOOSE_PHOTO_BACK  = 4;
     @OnClick(R.id.id_jump)
     public void jump(){
+
         Intent intent=new Intent(this,CertificateActivity.class);
         startActivity(intent);
     }
@@ -60,6 +77,34 @@ public class IdentifyIDActivity extends AppCompatActivity {
     public  void back(){
         finish();
     }
+    @OnClick(R.id.bt_confirm_upload)
+    public void upload(){
+        //创建ProgressDialog对象
+        ProgressDialog progressDialog = new ProgressDialog(
+                IdentifyIDActivity.this);
+        //设置进度条风格，风格为圆形，旋转的
+        progressDialog.setProgressStyle(
+                ProgressDialog.STYLE_SPINNER);
+        //设置ProgressDialog 标题
+        progressDialog.setTitle("正在上传照片信息");
+        //设置ProgressDialog 提示信息
+        progressDialog.setMessage("请稍等...");
+        //设置ProgressDialog 标题图标
+        progressDialog.setIcon(android.R.drawable.btn_star);
+        //设置ProgressDialog 的进度条是否不明确
+        progressDialog.setIndeterminate(false);
+        //设置ProgressDialog 是否可以按退回按键取消
+        progressDialog.setCancelable(true);
+        //设置取消按钮
+//        progressDialog.setButton("取消",
+//        new ProgressDialogButtonListener());
+//        让ProgressDialog显示
+        progressDialog.show();
+        handler.sendEmptyMessageDelayed(0,2000);
+
+
+    }
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

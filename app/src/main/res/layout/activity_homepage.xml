@@ -9,7 +9,7 @@
         android:id="@+id/tb"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
+        android:background="@drawable/title_background"
         android:minHeight="?attr/actionBarSize">
 
         <TextView
@@ -18,16 +18,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="首页"
-            android:textColor="@android:color/holo_green_light"
+            android:textColor="@color/white"
+
             android:textSize="20sp" />
-        <Button
-            android:id="@+id/bt_login"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="right"
-            android:text="登录"
-            android:visibility="invisible"
-            style="@style/Widget.AppCompat.Light.ActionButton"/>
+       <TextView
+           android:id="@+id/tv_title_right"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="发布活动"
+           android:textSize="15sp"
+           android:layout_marginRight="5dp"
+           android:layout_gravity="right"
+           android:textColor="@color/white"
+
+           />
 
     </android.support.v7.widget.Toolbar>
 
