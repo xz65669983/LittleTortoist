@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.EditText;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -22,6 +24,10 @@ public class SignupActivity extends AppCompatActivity {
         Intent intent=new Intent(this,IdentifyIDActivity.class);
         startActivity(intent);
     }
+    @BindView(R.id.input_name)
+    EditText input_name;
+
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
