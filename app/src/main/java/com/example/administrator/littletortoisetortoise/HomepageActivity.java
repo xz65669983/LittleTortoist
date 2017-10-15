@@ -10,17 +10,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.administrator.Constant.Fragmentid;
 import com.example.administrator.Fragment.PersonalCenterFrangment;
 import com.example.administrator.adapter.HomepagerAdapter;
 import com.example.administrator.qclCopy.BlurBehind;
 import com.example.administrator.qclCopy.OnBlurCompleteListener;
-
-import java.security.cert.CertPathValidatorException;
 import java.util.ArrayList;
 import java.util.List;
 
