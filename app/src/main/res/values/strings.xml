@@ -6,6 +6,12 @@
         <item>密码找回</item>
     </string-array>
 
+    <!--主页信息-->
+    <string name="home_navgation_first">首页</string>
+    <string name="home_navgation_second">交友</string>
+    <string name="home_navgation_third">活动</string>
+    <string name="home_navgation_forth">个人中心</string>
+
     <!--copy from shopping-->
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
