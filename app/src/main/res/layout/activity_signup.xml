@@ -60,7 +60,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName"
-                    android:hint="昵称" />
+                    android:hint="账号" />
             </android.support.design.widget.TextInputLayout>
 
             <!--  Email Label -->

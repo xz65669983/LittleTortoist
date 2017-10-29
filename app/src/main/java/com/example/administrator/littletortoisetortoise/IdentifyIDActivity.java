@@ -3,10 +3,12 @@ package com.example.administrator.littletortoisetortoise;
 import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.ProgressDialog;
+import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -21,6 +23,7 @@ import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.content.CursorLoader;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -29,12 +32,27 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.administrator.Retrofit.MyRetrofit;
+import com.example.administrator.Retrofit.UserService;
+
+import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 import static android.R.attr.switchMinWidth;
 import static android.R.attr.type;
@@ -44,18 +62,19 @@ import static android.R.attr.type;
  */
 
 public class IdentifyIDActivity extends AppCompatActivity {
-    Handler handler=new Handler(){
-        @Override
-        public void handleMessage(Message msg) {
-            switch(msg.what){
-                case 0:
-                    Intent intent=new Intent(IdentifyIDActivity.this,CertificateActivity.class);
-                    startActivity(intent);
-                    Toast.makeText(IdentifyIDActivity.this, "上传成功", Toast.LENGTH_SHORT).show();
-                    break;
-            }
-        }
-    };
+    private static final String TAG ="IdentifyIDActivity";
+//    Handler handler=new Handler(){
+//        @Override
+//        public void handleMessage(Message msg) {
+//            switch(msg.what){
+//                case 0:
+//                    Intent intent=new Intent(IdentifyIDActivity.this,CertificateActivity.class);
+//                    startActivity(intent);
+//                    Toast.makeText(IdentifyIDActivity.this, "上传成功", Toast.LENGTH_SHORT).show();
+//                    break;
+//            }
+//        }
+//    };
 
 
     @BindView(R.id.iv_id_back)ImageView iv_id_back;
@@ -80,7 +99,7 @@ public class IdentifyIDActivity extends AppCompatActivity {
     @OnClick(R.id.bt_confirm_upload)
     public void upload(){
         //创建ProgressDialog对象
-        ProgressDialog progressDialog = new ProgressDialog(
+        final ProgressDialog progressDialog = new ProgressDialog(
                 IdentifyIDActivity.this);
         //设置进度条风格，风格为圆形，旋转的
         progressDialog.setProgressStyle(
@@ -100,7 +119,47 @@ public class IdentifyIDActivity extends AppCompatActivity {
 //        new ProgressDialogButtonListener());
 //        让ProgressDialog显示
         progressDialog.show();
-        handler.sendEmptyMessageDelayed(0,2000);
+//        handler.sendEmptyMessageDelayed(0,2000);
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://kikipar.imwork.net:29296/")
+                .build();
+        UserService userService = retrofit.create(UserService.class);
+        //组装请求体
+
+//        File file=new File("/mnt/sdcard/pic/01.jpg");//将要保存图片的路径
+//        Bitmap bitmap=BitmapFactory.decodeResource(getResources(),R.drawable.pxm);
+//        try {
+//            BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(file));
+//            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bos);
+//            bos.flush();
+//            bos.close();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+
+
+        File file = new File(imageUri.getPath());//filePath 图片地址/
+        Log.i(TAG,"图片地址为："+imageUri.getPath());
+        MultipartBody.Builder builder = new MultipartBody.Builder().setType(MultipartBody.FORM);
+        RequestBody imageBody = RequestBody.create(MediaType.parse("multipart/form-data"), file);
+        builder.addFormDataPart("file", file.getName(), imageBody);
+        List<MultipartBody.Part> parts = builder.build().parts();
+        Call<ResponseBody> responseBodyCall = userService.upLoadCertificateId(parts);
+        responseBodyCall.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                Log.i(TAG,"上传出图片成功");
+                progressDialog.dismiss();
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                 Log.e(TAG,"上传图片失败");
+                 Log.e(TAG,t.getMessage());
+                progressDialog.dismiss();
+            }
+        });
 
 
     }
@@ -308,7 +367,6 @@ public class IdentifyIDActivity extends AppCompatActivity {
                     iv_id_back.setImageBitmap(bitmap);
                     break;
             }
-
 
         } else {
             Toast.makeText(this, "failed to get image", Toast.LENGTH_SHORT).show();

@@ -1,23 +1,37 @@
 package com.example.administrator.littletortoisetortoise;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.EditText;
-import android.widget.Toast;
+
 import com.example.administrator.Constant.ErrorCode;
+import com.example.administrator.Retrofit.MyRetrofit;
+import com.example.administrator.Retrofit.UserService;
+import com.example.administrator.model.Header;
+import com.example.administrator.model.RegisterModel;
+import com.example.administrator.model.User;
+
+import java.io.IOException;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
 
 /**
  * Created by Administrator on 2017/7/23.
  */
 
 public class SignupActivity extends AppCompatActivity {
+    private static final String TAG = "SignupActivity";
+
     @OnClick(R.id.btn_back)
     public void back() {
         finish();
@@ -26,19 +40,8 @@ public class SignupActivity extends AppCompatActivity {
     @OnClick(R.id.btn_signup)
     public void finsihSignup() {
         //判断输入是否正确
-        int legal = isLegal();
+     /*   int legal = isLegal();
         switch (legal) {
-            case 0:
-                SharedPreferences userInfo = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
-                SharedPreferences.Editor edit = userInfo.edit();
-                edit.putString("username", input_name.getText().toString());
-                edit.putString("password", input_password.getText().toString());
-                edit.commit();
-                Toast.makeText(this,"注册成功",Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(this, IdentifyIDActivity.class);
-                startActivity(intent);
-                finish();
-                break;
             case ErrorCode.EMPTY_NAME:
                 Toast.makeText(this, "账户不能为空", Toast.LENGTH_SHORT).show();
                 break;
@@ -48,10 +51,47 @@ public class SignupActivity extends AppCompatActivity {
             case ErrorCode.NOT_SAME_PASSWORD:
                 Toast.makeText(this, "两次输入密码不一致", Toast.LENGTH_SHORT).show();
                 break;
-
-
-        }
-
+        }*/
+        //输入正确
+        // if(legal==0){
+//        RegisterModel registerModel = new RegisterModel();
+//        User user=new User();
+//        user.setUserAcc("xz65669983");
+//        user.setPwd("123456789");
+//        user.setPhoneNumber("65669983");
+//        user.setUserName("zzc");
+//        user.setMale(0);
+//        user.setEmail("zzcfuji@126.com");
+//        user.setNickName("curry");
+//        user.setUserGrade(0);
+//        user.setVerifyType(0);
+//        registerModel.setHeader(new Header());
+//        registerModel.setUser(user);
+//
+//        Retrofit retrofit = MyRetrofit.getGsonRetrofitInstance();
+//        UserService userService = retrofit.create(UserService.class);
+//
+//        Call<ResponseBody> responseBodyCall = userService.signUp(registerModel);
+//        responseBodyCall.enqueue(new Callback<ResponseBody>() {
+//
+//            @Override
+//            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+//
+//                try {
+//                    Log.i(TAG, response.body().string());
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<ResponseBody> call, Throwable t) {
+//                Log.e(TAG,"注册失败");
+//            }
+//        });
+        // }
+        Intent intent=new Intent(SignupActivity.this,IdentifyIDActivity.class);
+        startActivity(intent);
     }
 
     @BindView(R.id.input_name)
