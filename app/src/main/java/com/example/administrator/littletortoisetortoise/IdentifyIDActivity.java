@@ -137,8 +137,6 @@ public class IdentifyIDActivity extends AppCompatActivity {
 //        } catch (IOException e) {
 //            e.printStackTrace();
 //        }
-
-
         File file = new File(imageUri.getPath());//filePath 图片地址/
         Log.i(TAG,"图片地址为："+imageUri.getPath());
         MultipartBody.Builder builder = new MultipartBody.Builder().setType(MultipartBody.FORM);
